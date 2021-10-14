@@ -33,9 +33,9 @@
 				<div class="col-md-4 d-flex">
 					<div class="social-media">
    		    		<p class="mb-0 d-flex">
-   		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-   		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-   		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-youtube"><i class="sr-only">Youtube</i></span></a>
+   		    			<a target="_blank" href="https://www.facebook.com/jesus.antonio.77312/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+   		    			<a target="_blank" href="https://github.com/AntonioAstudillo" class="d-flex align-items-center justify-content-center"><span class="fa fa-github"><i class="sr-only">GitHub</i></span></a>
+   		    			<a target="_blank" href="https://www.youtube.com/watch?v=xFOCY21EW1g" class="d-flex align-items-center justify-content-center"><span class="fa fa-youtube"><i class="sr-only">Youtube</i></span></a>
    		    		</p>
 	            </div>
 				</div>
@@ -73,24 +73,28 @@
             </div>
 
             <div class="row mt-4">
-               <div class="col-4">
-                  <label for="nombre">Nacionalidad</label>
-                  <input id="nombre" name="nacionalidad" type="text" class="form-control" placeholder="Ingrese su pais">
+               <div class="col-6">
+                  <label for="nombre">Carrera</label>
+                  <select class="form-control" name="carreras">
+                     <option class = "form-control" value="Computación">Ing Computación</option>
+                     <option class = "form-control" value="Civil">Ing Civil</option>
+                     <option class = "form-control" value="Industrial">Ing Industrial</option>
+                     <option class = "form-control" value="Administrativa">Administrativa</option>
+                     <option class = "form-control" value="Nutricion">Nutrición</option>
+                     <option class = "form-control" value="Diseño">Diseño</option>
+                     <option class = "form-control" value="Docencia">Docencia</option>
+                     <option class = "form-control" value="Derecho">Derecho</option>
+                  </select>
                </div>
 
-               <div class="col-4">
-                  <label for="nombre">Edad</label>
-                  <input id="nombre" name="edad" type="text" class="form-control" placeholder="Ingrese su edad">
-               </div>
-
-               <div class="col-4">
+               <div class="col-6">
                   <label for="nombre">Fecha Nacimineto</label>
                   <input id="nombre" name="fechaN" type="date" class="form-control" placeholder="Ingrese su apellido materno">
                </div>
             </div>
 
             <div class="row mt-3">
-               <div class="col m-0 auto">
+               <div class="col-12">
                   <input type="submit" value="Generar reporte" class="btn btn-dark font-weight-bold" >
                </div>
             </div>
