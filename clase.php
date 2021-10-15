@@ -9,48 +9,49 @@ class GenerarReporte{
       $this->pdf = new FPDF(); //instanciamos objeto de la clase FPDF
    }
 
-   //$nombre , $fechaN , $edad , $nacionalidad
-   public function generar(){
+
+   public function generar($nombre , $fechaA , $empresa , $documento , $tiempo){
       $this->pdf->AddPage(); //Agregamos la pagina
       $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->SetTitle('Lista de chequeo',true);
 
       /*Encabezado*/
       $this->pdf->SetFillColor(8,113,255);
       $this->pdf->SetTextColor(3,3,3);
-      $this->pdf->Cell(190,10,'CHECK LIST ALUMNOS',1,1,'C',true);
+      $this->pdf->Cell(190,10,'CHECK LIST',1,1,'C',true);
 
       $this->pdf->setXY(10,25);
       $this->pdf->Cell(43,5,'No Documento',1,1,'C',false);
       $this->pdf->setXY(53,25);
       $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
-      $this->pdf->Cell(50,5,'AJ0481851',1,1,'C',false); //Aqui ira el número de documento
+      $this->pdf->Cell(50,5,utf8_decode($documento),1,1,'C',false); //Aqui ira el número de documento
 
       $this->pdf->setXY(103,25);
       $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
-      $this->pdf->Cell(43,5,'Fecha',1,1,'C',false);
+      $this->pdf->Cell(43,5,'Hora/Fecha',1,1,'C',false);
       $this->pdf->setXY(146,25);
       $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
-      $this->pdf->Cell(54,5,'14/10/2021',1,1,'C',false); //Aqui ira la fecha de documento
+      $this->pdf->Cell(54,5,utf8_decode($tiempo),1,1,'C',false); //Aqui ira la fecha de documento
 
       /*Datos del usuario*/
       $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
-      $this->pdf->Cell(43,7,'Nombre',1,1,'C',false);
+      $this->pdf->Cell(43,7,'Inspector',1,1,'C',false);
       $this->pdf->setXY(53,30);
       $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
-      $this->pdf->Cell(147,7,utf8_decode('Jesus Antonio Astudillo Jaimes'),1,1,'C',false); //Aqui ira el nombre completo del usuario
+      $this->pdf->Cell(147,7,utf8_decode($nombre),1,1,'C',false); //Aqui ira el nombre completo del usuario
       $this->pdf->setXY(10,37);
       $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
-      $this->pdf->Cell(43,6,'Carrera',1,1,'C',false);
+      $this->pdf->Cell(43,6,'Empresa',1,1,'C',false);
       $this->pdf->setXY(53,37);
       $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
-      $this->pdf->Cell(50,6,utf8_decode('Computación'),'RB',1,'C',false); //Aqui ira la edad del usuario
+      $this->pdf->Cell(50,6,utf8_decode($empresa),'RB',1,'C',false); //Aqui ira la edad del usuario
 
       $this->pdf->setXY(103,37);
       $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
-      $this->pdf->Cell(43,6,'Fecha De Nacimiento',1,1,'C',false);
+      $this->pdf->Cell(43,6,'Fecha De Alta',1,1,'C',false);
       $this->pdf->setXY(140,37);
       $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
-      $this->pdf->Cell(60,6,'29/12/1994','RB',1,'C',false); //Aqui ira la nacionalidad del usuario
+      $this->pdf->Cell(60,6,utf8_decode($fechaA),'RB',1,'C',false); //Aqui ira la nacionalidad del usuario
 
 
       /*Cuerpo del documento*/
@@ -252,13 +253,103 @@ class GenerarReporte{
       $this->pdf->Cell(190,7,utf8_decode('Código incidencias relacionadas:'),1,1,'',false);
       $this->pdf->setXY(62,130);
       $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
-      $this->pdf->write(15,'Que onda wei como estas codigo y881881');
+      $this->pdf->write(15,'');
 
 
+      $this->pdf->setXY(10,145);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(190,7,utf8_decode('4. Tiempos de producción'),1,1,'L',false);
+      $this->pdf->setXY(10,152);
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(140,7,utf8_decode('¿Existieron retrasos en la fabricación?'),1,1,'',false);
+      $this->pdf->setXY(150,152);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(50,7,'',1,1,'L',false);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(152,153.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(157,157, 'SI');
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(165,153.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(170,157 , 'NO');
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(180,153.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(185, 157, 'N/A');
+
+      $this->pdf->setXY(10,159);
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(140,7,utf8_decode('¿Hubo máquinas indisponibles?'),1,1,'',false);
+      $this->pdf->setXY(150,159);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(50,7,'',1,1,'L',false);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(152,160.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(157,163.8, 'SI');
+
+      $this->pdf->setXY(165,160.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(170,163.8 , 'NO');
+      $this->pdf->setXY(180,160.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(185, 163.8, 'N/P');
 
 
+      $this->pdf->setXY(10,170);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(190,7,utf8_decode('5. Entrega y logística'),1,1,'L',false);
+      $this->pdf->setXY(10,177);
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(140,7,utf8_decode('¿Producto correctamente identificado?'),1,1,'',false);
+      $this->pdf->setXY(150,177);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(50,7,'',1,1,'L',false);
+      $this->pdf->setXY(152,178.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(157,181.8, 'SI');
+
+      $this->pdf->setXY(165,178.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(170,181.8 , 'NO');
+      $this->pdf->setXY(180,178.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(185, 181.8, 'N/A');
+
+      $this->pdf->setXY(10,184);
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(140,7,utf8_decode('¿Producto conforme a las especificaciones del cliente?'),1,1,'',false);
+      $this->pdf->setXY(150,184);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(50,7,'',1,1,'L',false); //cuadro principal
+
+      $this->pdf->setXY(152,185.8);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(157,189, 'SI');
+
+      $this->pdf->setXY(165,185.8);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(170,189 , 'NO');
+
+      $this->pdf->setXY(180,185.8);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(185, 189, 'N/A');
 
 
+      /****************
+        OBSERVACIONES
+       ******************/
+
+       $this->pdf->setXY(10,196);
+       $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+       $this->pdf->Cell(190,7,utf8_decode('Observaciones'),1,1,'L',false);
+       $this->pdf->MultiCell(190,30,utf8_decode(''),1,'L',false);
+
+       $this->pdf->SetFont('Arial','',8); //Le damos formato a nuestra fuente
+       $this->pdf->write(5,'NOTA:   N/A = No aplicable.     N/P = No presenciado');
 
       $this->pdf->Output();
    }

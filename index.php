@@ -58,38 +58,36 @@
             <div class="row">
                <div class="col-4">
                   <label for="nombre">Nombre</label>
-                  <input id="nombre" name="nomre" type="text" class="form-control" placeholder="Ingrese su nombre">
+                  <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Ingrese su nombre">
                </div>
 
                <div class="col-4">
-                  <label for="nombre">Apellido Paterno</label>
-                  <input id="nombre" name="apellidoP" type="text" class="form-control" placeholder="Ingrese su apellido paterno">
+                  <label for="apellidoP">Apellido Paterno</label>
+                  <input id="apellidoP" name="apellidoP" type="text" class="form-control" placeholder="Ingrese su apellido paterno">
                </div>
 
                <div class="col-4">
-                  <label for="nombre">Apellido Materno</label>
-                  <input id="nombre" name="apellidoM" type="text" class="form-control" placeholder="Ingrese su apellido materno">
+                  <label for="apellidoM">Apellido Materno</label>
+                  <input id="apellidoM" name="apellidoM" type="text" class="form-control" placeholder="Ingrese su apellido materno">
                </div>
             </div>
 
             <div class="row mt-4">
                <div class="col-6">
-                  <label for="nombre">Carrera</label>
-                  <select class="form-control" name="carreras">
-                     <option class = "form-control" value="Computación">Ing Computación</option>
-                     <option class = "form-control" value="Civil">Ing Civil</option>
-                     <option class = "form-control" value="Industrial">Ing Industrial</option>
-                     <option class = "form-control" value="Administrativa">Administrativa</option>
-                     <option class = "form-control" value="Nutricion">Nutrición</option>
-                     <option class = "form-control" value="Diseño">Diseño</option>
-                     <option class = "form-control" value="Docencia">Docencia</option>
-                     <option class = "form-control" value="Derecho">Derecho</option>
+                  <label for="empresas">Empresas</label>
+                  <select class="form-control" name="empresas">
+                     <option disabled value="0" class="form-control">Elige una empresa</option>
+                     <option class = "form-control" value="1">Banein</option>
+                     <option class = "form-control" value="2">Chorizos DM Toluca</option>
+                     <option class = "form-control" value="3">Fénix Farms</option>
+                     <option class = "form-control" value="4">Gracia Bolsos</option>
+                     <option class = "form-control" value="5">Abeja Reyna</option>
                   </select>
                </div>
 
                <div class="col-6">
-                  <label for="nombre">Fecha Nacimineto</label>
-                  <input id="nombre" name="fechaN" type="date" class="form-control" placeholder="Ingrese su apellido materno">
+                  <label for="fechaN">Fecha de Alta</label>
+                  <input id="fechaN" name="fechaA" type="date" class="form-control">
                </div>
             </div>
 
