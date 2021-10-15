@@ -110,7 +110,155 @@ class GenerarReporte{
       $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
       $this->pdf->text(185,68.3 , 'N/A');
 
+
+
+      $this->pdf->setXY(10,71);
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(190,7,'',1,1,'L',false);
+      $this->pdf->text(12,76,utf8_decode('Código de los informes de recepción:'));
+
+      /****************************
+          APARTADO DOS
+       *****************************/
+
+      /*Cuerpo del documento*/
+      $this->pdf->setXY(10,82);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(190,7,'2. Actividades realizadas',1,1,'L',false);
+
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(140,7,utf8_decode('¿Se siguieron los procedimientos?'),1,1,'',false);
+
+      /*Caja de verificacion*/
+      $this->pdf->setXY(150,89);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(50,7,'',1,1,'L',false);
+
+      $this->pdf->setXY(152,90.7);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(4,4,'',1,1,'L',false);
+      $this->pdf->text(157,94 , 'SI');
+
+      $this->pdf->setXY(165,90.7);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(4,4,'',1,1,'L',false);
+      $this->pdf->text(170,94 , 'NO');
+
+      $this->pdf->setXY(180,90.7);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(4,4,'',1,1,'L',false);
+      $this->pdf->text(185,94 , 'N/A');
+
       /*Fin de codigo de caja de verificacion*/
+      $this->pdf->setXY(10,96);
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(140,7,utf8_decode('¿Se usaron las revisiones vigentes de los procedimientos?'),1,1,'',false);
+
+
+      // /*Caja de verificacion*/
+      $this->pdf->setXY(150,96);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(50,7,'',1,1,'L',false);
+
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(152,97.3);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(157,100.5, 'SI');
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(165,97.3);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(170,100.5 , 'NO');
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(180,97.3);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(185,100.5 , 'N/A');
+
+      $this->pdf->setXY(10,103);
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(140,7,utf8_decode('¿Se rellenaron los registros y estos son correctos?'),1,1,'',false);
+
+      // /*Caja de verificacion*/
+      $this->pdf->setXY(150,103);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(50,7,'',1,1,'L',false);
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(152,104);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(157,107.5, 'SI');
+      //
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(165,104);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(170,107.5 , 'NO');
+      //
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(180,104);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(185,107.5 , 'N/A');
+
+      $this->pdf->setXY(10,113);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(190,7,'3. Incidencias',1,1,'L',false);
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(140,7,utf8_decode('¿Producto final conforme?'),1,1,'',false);
+
+      $this->pdf->setXY(150,120);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(50,7,'',1,1,'L',false);
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(152,121.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(157,125, 'SI');
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(165,121.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(170,125 , 'NO');
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(180,121.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(185,125 , 'N/A');
+
+      $this->pdf->setXY(10,127);
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(140,7,utf8_decode('¿Existe alguna incidencia relacionada?'),1,1,'',false);
+      $this->pdf->setXY(150,127);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(50,7,'',1,1,'L',false);
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(152,128.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(157,131.8, 'SI');
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(165,128.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(170,131.8 , 'NO');
+
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->setXY(180,128.5);
+      $this->pdf->Cell(4,4,'',1,1,'L',false); //cuadros de relleno
+      $this->pdf->text(185, 131.8, 'N/A');
+
+      $this->pdf->setXY(10,134);
+      $this->pdf->SetFont('Arial','',10); //Le damos formato a nuestra fuente
+      $this->pdf->Cell(190,7,utf8_decode('Código incidencias relacionadas:'),1,1,'',false);
+      $this->pdf->setXY(62,130);
+      $this->pdf->SetFont('Arial','B',10); //Le damos formato a nuestra fuente
+      $this->pdf->write(15,'Que onda wei como estas codigo y881881');
+
+
+
+
+
+
 
       $this->pdf->Output();
    }
